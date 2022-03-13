@@ -16,7 +16,7 @@ impl Obstacle {
         Obstacle {
             x,
             gap_y: random.range(10, 40),
-            size: i32::max(2, 20 - score),
+            size: i32::max(2, 15 - score),
         }
     }
 

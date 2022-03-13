@@ -1,5 +1,5 @@
-use crate::player::Player;
 use crate::obstacle::Obstacle;
+use crate::player::Player;
 use bracket_lib::prelude::*;
 
 const SCREEN_WIDTH: i32 = 80;
@@ -88,9 +88,7 @@ impl State {
 
         if self.player.x > self.obstacle.x {
             self.score += 1;
-            self.obstacle = Obstacle::new(
-                self.player.x + SCREEN_HEIGHT, self.score
-            );
+            self.obstacle = Obstacle::new(self.player.x + SCREEN_HEIGHT, self.score);
         }
 
         if self.player.y > SCREEN_HEIGHT || self.obstacle.hit_obstacle(&self.player) {
